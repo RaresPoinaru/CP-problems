@@ -11,25 +11,5 @@ signed main (){
     ios_base::sync_with_stdio (false);
     cin.tie (nullptr);
     cin >>n;
-    for (int i=1;i<=n;++i){
-        cin >>a[i];
-    }
-    rez[1]=a[1];
-    pos[1]=1;
-    cout <<1<<' ';
-    for (int i=2;i<=n;++i){
-        pos[i]=i;
-        rez[i]=a[i];
-        while (pos[i]>1){
-            double crt=rez[pos[i]-1]*(pos[i]-1-pos[pos[i]-1]+1)+(i-pos[i]+1)*rez[i];
-            crt/=double (i-pos[pos[i]-1]+1);
-            if (crt>=rez[i]){
-                rez[i]=crt;
-                pos[i]=pos[pos[i]-1];
-            }
-            else
-                break;
-        }
-        cout <<i-pos[i]+1<<' ';
-    }
+    
 }
